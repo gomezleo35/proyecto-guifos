@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/style.css" id="css-estilos">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <title>Gifos</title>
+</head>
+<body>
+    <nav class="nav-gifos">
+        <p class="nav-title">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</p>
+    </nav>
+    <div class="div-primero flex between" >
+        <img src="/src/img/gifOF_logo.png" class="gifof-logo" id="gifof-logo" alt="logo">
+        <div class="flex div-botones">
+                <div class="btn btn-crear"><button class="btn-text btn-crear-sub">Crear Guifos</button></div>
+                <div>
+                    <div class="flex div-elegir">
+                        <div class="btn btn-elegir"><button id="elegirTema"class="btn-text btn-elegir-sub">Elegir tema</button></div>
+                        <div class="btn btn-desp flex center-x center-y"><button id="elegirTemaDos" class="img-despl"><img src="/src/img/dropdown.svg" alt=""></button></div>
+                    </div>
+                    <div class="despl-div flex" id="menuElegirTema" style="display: none;">
+                        <button class="btn-day"><span class="border-m">S</span>ailor Day</button>
+                        <button class="btn-night">Sailor Night</button>
+                    </div>
+                </div>
+                <div class="btn-mis-guifos"><button class="btn-m-gfos btn-text-2"><span class="border-m">M</span>is Guifos</button></div>
+        </div>
+    </div>
+    <div class="busqueda">
+        <div class="header-buscar">
+            <h3 class="buscar-title">Buscar</h3>
+        </div>
+        <div class="form-buscar">
+            <input type="text" name="buscar" id="buscar" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+            <button class="btn-buscar"><img class="lupa" src="/src/img/lupa_inactive.svg" alt="buscar">Buscar</button>
+        </div>
+    </div>
+    <div class="busqueda-dos" id="opcionesBusqueda" style="display: none;" onfocus="busqueda()" >
+        <button class="btn-bus btn-result-sug">Resultado de búsqueda sugerido</button>
+        <button class="btn-bus btn-result-sim">Un resultado similar de búsqueda</button>
+        <button class="btn-bus btn-otro">Y otro más</button>
+    </div>
+    <script src="/src/js/script.js"></script>
+</body>
+</html>
