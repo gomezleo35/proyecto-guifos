@@ -33,14 +33,22 @@
             <h3 class="buscar-title">Buscar</h3>
         </div>
         <div class="form-buscar">
-            <input type="text" name="buscar" id="buscar" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-            <button class="btn-buscar"><img class="lupa" src="/src/img/lupa_inactive.svg" alt="buscar">Buscar</button>
+            <input type="text" name="buscar" id="buscar" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" onfocus="busqueda()" >
+            <div class="btn-buscar-principal" id="btnBuscarPrincipal">
+                <button class="btn-buscar" id="btnBuscar" onclick="cerrarBusqueda()"><img class="lupa" id="lupa" src="/src/img/lupa_inactive.svg" alt="buscar">Buscar</button>
+            </div>
         </div>
     </div>
-    <div class="busqueda-dos" id="opcionesBusqueda" style="display: none;" onfocus="busqueda()" >
+    <div class="busqueda-dos" id="opcionesBusqueda" style="display: none;">
         <button class="btn-bus btn-result-sug">Resultado de búsqueda sugerido</button>
         <button class="btn-bus btn-result-sim">Un resultado similar de búsqueda</button>
         <button class="btn-bus btn-otro">Y otro más</button>
+    </div>
+    <div class="div-sugeridos">
+        <h3 class="title-sugeridos">Hoy te sugerimos:</h3>
+    </div>
+    <div id="resultadoDeBusqueda">
+        
     </div>
     <script src="/src/js/script.js"></script>
 </body>
