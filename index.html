@@ -14,7 +14,7 @@
     <div class="div-primero flex between" >
         <img src="/src/img/gifOF_logo.png" class="gifof-logo" id="gifof-logo" alt="logo">
         <div class="flex div-botones">
-                <div class="btn btn-crear"><button class="btn-text btn-crear-sub">Crear Guifos</button></div>
+                <div class="btn btn-crear"><button class="btn-text btn-crear-sub" onclick="location.href='/src/subida/subir.html'">Crear Guifos</button></div>
                 <div>
                     <div class="flex div-elegir">
                         <div class="btn btn-elegir"><button id="elegirTema"class="btn-text btn-elegir-sub">Elegir tema</button></div>
@@ -33,22 +33,35 @@
             <h3 class="buscar-title">Buscar</h3>
         </div>
         <div class="form-buscar">
-            <input type="text" name="buscar" id="buscar" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" onfocus="busqueda()" >
+            <input type="text" name="buscar" id="buscar" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" oninput="busqueda()" onblur="validarCampoVacio();" >
             <div class="btn-buscar-principal" id="btnBuscarPrincipal">
                 <button class="btn-buscar" id="btnBuscar" onclick="cerrarBusqueda()"><img class="lupa" id="lupa" src="/src/img/lupa_inactive.svg" alt="buscar">Buscar</button>
             </div>
         </div>
     </div>
     <div class="busqueda-dos" id="opcionesBusqueda" style="display: none;">
-        <button class="btn-bus btn-result-sug">Resultado de búsqueda sugerido</button>
-        <button class="btn-bus btn-result-sim">Un resultado similar de búsqueda</button>
-        <button class="btn-bus btn-otro">Y otro más</button>
+        <div class="btn-bus btn-result-sug"><button class="btn-recomendacion-busq" id="tendencia">Resultado de búsqueda sugerido</button></div>
+        <div class="btn-bus btn-result-sim"><button class="btn-recomendacion-busq" id="busquedaSimilar">Un resultado similar de búsqueda</button></div>
+        <div class="btn-bus btn-otro"><button class="btn-recomendacion-busq" id="busquedaSimilarDos">Y otro más</button></div>
     </div>
-    <div class="div-sugeridos">
+    <!-- inicio de zona donde se muestran los gifs -->
+    <div class="div-sugeridos" id="divTitleSugeridos">
         <h3 class="title-sugeridos">Hoy te sugerimos:</h3>
     </div>
-    <div id="resultadoDeBusqueda">
-        
+    <div class="div-resultados-sugerencias" id="div-resultados">
+        <!-- div que se llenara con sugerencias -->
+    </div>
+    <div class="div-sugeridos" id="divTitleTendencias">
+        <h3 class="title-sugeridos">Tendencias:</h3>
+    </div>
+    <div class="div-resultados-sugerencias" id="div-resultados-tendencias">
+        <!-- div que se llenara con tendencias -->
+    </div>
+    <div class="div-sugeridos" style="display: none;" id="divTitleBusqueda">
+        <h3 class="title-sugeridos"id="tituloDivBusqueda"></h3>
+    </div>
+    <div class="div-resultados-sugerencias" id="div-resultados-busqueda" style="display: none;">
+        <!-- div que se llenara con resultado de busquedas -->
     </div>
     <script src="/src/js/script.js"></script>
 </body>

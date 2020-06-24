@@ -305,18 +305,34 @@ body{
     border-top: none;
     margin-left: 6.9%;
     margin-right: 9.7%;
+    position: absolute;
+    width: 83.4%;
 }
 .btn-bus{
     width: 88%;;
     height: 36px;
     margin-left: 16px;
-    text-align: left;
-    padding-left: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-recomendacion-busq{
+    width: 99.5%;
+    height: 90.5%;
+    border: none;
     font-family: 'Chakra Petch';
     font-size: 16px;
     color: #110038;
     letter-spacing: 0;
     line-height: 22px;
+    text-align: left;
+    padding-left: 16px;
+}
+.btn-recomendacion-busq:active{
+    border: dotted 1px black;
+}
+.btn-recomendacion-busq:focus{
+    outline: dotted 1px black;
 }
 .btn-result-sim{
     margin-top: 11px;
@@ -357,6 +373,9 @@ body{
 .btn-rosa:active{
     border: dotted 1px black;
 }
+.btn-rosa:focus{
+    outline: dotted 1px black;
+}
 .btn-buscar-principal-rosa{
     width: 102px;
     height: 36px;
@@ -387,4 +406,91 @@ body{
     color: #110038;
     letter-spacing: 0;
     margin-left: 7px;
+}
+/* prueba */
+.div-resultados-sugerencias{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 7.2%;
+    margin-right: 10%;
+    margin-top: 19px;
+}
+.contenedorClass{
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    padding: 4px;
+    margin-bottom: 15px;
+}
+.gif{
+    width: 280px;
+    height: 280px;
+}
+.gif:hover{
+    border: dotted 1px black;
+}
+.titular-gif-sugerencias{
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    margin-bottom: 2px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.titulo-sugerencias{
+    margin: 0px;
+    font-family: 'Chakra Petch';
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    margin-left: 2px;
+}
+.logo-closed{
+    margin-right: 4px;
+}
+.btn-ver-mas{
+    font-family: 'Chakra Petch';
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    background: #4180F6;
+    border: none;
+    width: 79px;
+    height: 32px;
+}
+.div-btn-ver-mas{
+    background: #4180F6;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    width: 81px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 233px;
+    margin-left: 9px;
+    z-index: 10;
+}
+.btn-ver-mas:hover{
+    border: dotted 1px black;
+}
+.btn-ver-mas:focus{
+    outline: dotted 1px black;
+}
+/* tendencias */
+.titular-gif-tendencias{
+    display: none;
+}
+.titular-gif-tendencias:hover{
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    height: 24px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
