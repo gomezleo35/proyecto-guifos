@@ -116,19 +116,27 @@ btnSubir.addEventListener('click', function(){
                 const getApiURL = `https://api.giphy.com/v1/gifs/${copyID}?api_key=${apiKey}&gif_id=${copyID}`;
                 getGifURL(getApiURL);
                 urlGif = 'https://giphy.com/gifs/' + gifObject.data.id;
+                urlGifCreado =  await urlGifSubidoGet(getApiURL);
                 console.log(urlGif)
-                
-                return urlGif;  
-            })
-            .then( urlImg => {
-                document.getElementById('img-exito').src = urlImg;
+                document.getElementById('img-exito').src = urlGifCreado;
                 contenedorCapturar.style.display= 'none';
                 divExito.style.display = 'flex';
+                return getApiURL;  
             })
             .catch(error => {
                 console.log(error)
             })
 })
+
+function urlGifSubidoGet (urlGif) {
+    fetch(urlGif)
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            return data.data.images.original.mp4;
+        })
+}
 
 //cancelar
 
@@ -168,7 +176,7 @@ function guardarGif(gifID) {
 };
 
 // Obtener URL de Gif
-
+let urlGifCreado;
 
 function getGifURL(url) {
     useRequest(url).then(response => {
