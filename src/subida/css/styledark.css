@@ -1,9 +1,11 @@
 body{
     margin: 0px;
     padding: 0px;
+    background: #110038;
 }
 .nav-gifos {
-    background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+    box-shadow: 0 1px 0 0 #110038;
     border-top: white 1px solid;
     border-left: white 1px solid;
     border-right: white 1px solid;
@@ -40,15 +42,14 @@ body{
     justify-content: center;
 }
 .info-crear{
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
     width: 684px;
     padding-top: 3px;
     padding-left: 3px;
     padding-right: 3px;
 }
 .titular-crear{
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
     padding-left: 4px;
     padding-top: 3.4px;
     padding-bottom: 2.6px;
@@ -149,14 +150,13 @@ body{
 .contenedor-capturar{
     width: 860px;
     height: 548px;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
     padding-top: 3px;
     padding-left: 3px;
     padding-right: 3px;
 }
 .titular-capturando-gif{
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
     padding-left: 7px;
     padding-bottom: 2.6px;
     padding-top: 3.4px;
@@ -385,13 +385,12 @@ body{
     outline-offset: -4px;
 }
 .div-exito{
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
     width: 721px;
     height: 391px;
 }
 .titular-exito{
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
     padding-left: 4px;
     padding-top: 3.4px;
     padding-bottom: 2.6px;

@@ -174,7 +174,7 @@ body{
     background: #FFF4FD;
     border: 1px solid #CCA6C9;
     box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
-    font-family: ChakraPetch-Regular;
+    font-family: 'Chakra Petch';
     font-size: 16px;
     color: #110038;
     letter-spacing: 0;
@@ -191,9 +191,11 @@ body{
     width: 150px;
     height: 36px;
     margin-bottom: 10px;
-    background: #F0F0F0;
-    border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    font-family: 'Chakra Petch';
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 22px;
 }
 .despl-div{
     height: 102px;
@@ -212,6 +214,9 @@ body{
     margin-right: 9.7%;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-left: 3px;
 }
 .header-buscar{
     background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
@@ -267,6 +272,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 ::placeholder{

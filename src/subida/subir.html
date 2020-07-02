@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/subida/css/style.css">
+    <link rel="stylesheet" href="/src/subida/css/style.css" id="estilos">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
     <title>Crear gif</title>
 </head>
@@ -13,7 +13,7 @@
     </nav>
     <div class="div-logos">
         <a href="/index.html" class="volver"><img src="/src/img/arrow.svg" alt="volver"></a>
-        <img class="logo" src="/src/img/gifOF_logo.png" alt="logo">
+        <img class="logo" src="/src/img/gifOF_logo.png" id="logoGifos" alt="logo">
     </div>
     <div class="container-crear" id="container-info">
         <div class="info-crear">
@@ -93,19 +93,22 @@
             </div>
             <div class="div-exito-hijo">
                 <div class="contenedor-img-exito">
-                    
-                    <img src="" alt="" class="img-exito" id="img-exito">
+                    <video src="" class="img-exito" id="img-exito" autoplay loop></video>
                 </div>
                 <div class="contenedor-btn-exito">
                     <h3 class="creado-exito">Guifo creado con éxito</h3>
-                    <button class="btn-exito">Copiar Enlace Guifo</button>
-                    <button class="btn-exito">Descargar Guifo</button>
+                    <button class="btn-exito" id="copia">Copiar Enlace Guifo</button>
+                    <button class="btn-exito" id="descargar">Descargar Guifo</button>
                 </div>
             </div>
             <button class="btn-listo-dos" id="btnListo">Listo</button>
         </div>
     </div>
-    
+    <!-- mis gifos -->
+    <div class="div-sugeridos" id="divTitleSugeridos">
+        <h3 class="title-sugeridos">Mis guifos</h3>
+    </div>
+    <div class="div-resultados-mis-gifos" id="divMisGifos"></div>
     <script src="/src/subida/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
 </body>

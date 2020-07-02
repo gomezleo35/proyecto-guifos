@@ -8,6 +8,13 @@ const apiKey = 'lz8bmzgplRAlgx1kU7VcVGJU3tjucFYn';
 const busquedasSimilar = document.getElementById('busquedaSimilar');
 const busquedaTendencia = document.getElementById('tendencia');
 const busquedaSimilarDos = document.getElementById('busquedaSimilarDos');
+const btnDay = document.getElementById('btnDay');
+const btnDark = document.getElementById('btnNight');
+const estilos = document.getElementById('css-estilos');
+const estiloElegido = localStorage.getItem('estilo');
+const logoGifos = document.getElementById('gifof-logo');
+const lupita = document.getElementById('lupa');
+const btnMisGuifos = document.getElementById('BtnMisGuifos');
 let element;
 let resultadoBusquedaUrl ;
 let inputBusqueda;
@@ -15,6 +22,22 @@ let inputBusqueda;
 obtenerGifsugerencias();
 tendencias();
 obtenerGifTendencias ()
+
+if (estiloElegido == 1) {
+    day()
+} else {
+    dark();
+}
+
+
+
+btnDay.addEventListener('click', function(){
+    day();
+});
+
+btnDark.addEventListener('click', function(){
+    dark();
+})
 
 busquedaSimilarDos.addEventListener('click', function () {
     let valor = document.getElementById('busquedaSimilarDos').innerText;
@@ -48,6 +71,21 @@ btnElegirTemaDos.addEventListener('click',function () {
     }
 });
 
+//funciones de estilos
+
+function day() {
+    estilos.href = '/src/css/style.css';
+    localStorage.setItem('estilo', '1');
+    logoGifos.src =  '/src/img/gifOF_logo.png';
+    lupita.src ='/src/img/lupa_inactive.svg';
+}
+
+function dark() {
+    estilos.href  = '/src/css/styledark.css';
+    localStorage.setItem('estilo','2');
+    logoGifos.src =  '/src/img/gifOF_logo_dark.png';
+    lupita.src ='/src/img/Combined Shape.svg';
+}
 
 function busqueda() {
     document.getElementById('opcionesBusqueda').style.display = 'flex';
@@ -60,15 +98,29 @@ function cerrarBusqueda() {
 }
 
 function btnBuscarRosa() {
-    document.getElementById('btnBuscar').className = 'btn-rosa';
-    document.getElementById('lupa').src = '/src/img/lupa.svg';
-    document.getElementById('btnBuscarPrincipal').className = 'btn-buscar-principal-rosa';
+    if (estiloElegido == 1) {
+        document.getElementById('btnBuscar').className = 'btn-rosa';
+        document.getElementById('lupa').src = '/src/img/lupa.svg';
+        document.getElementById('btnBuscarPrincipal').className = 'btn-buscar-principal-rosa';
+    } else {
+        document.getElementById('btnBuscar').className = 'btn-rosa';
+        document.getElementById('lupa').src = '/src/img/lupa_light.svg';
+        document.getElementById('btnBuscarPrincipal').className = 'btn-buscar-principal-rosa';
+    }
+    
 }
 
 function btnBuscarGris() {
-    document.getElementById('btnBuscar').className = 'btn-buscar';
-    document.getElementById('lupa').src = '/src/img/lupa_inactive.svg';
-    document.getElementById('btnBuscarPrincipal').className = 'btn-buscar-principal';
+    if (estiloElegido == 1) {
+        document.getElementById('btnBuscar').className = 'btn-buscar';
+        document.getElementById('lupa').src = '/src/img/lupa_inactive.svg';
+        document.getElementById('btnBuscarPrincipal').className = 'btn-buscar-principal';
+    } else {
+        document.getElementById('btnBuscar').className = 'btn-buscar';
+        document.getElementById('lupa').src = '/src/img/Combined Shape.svg';
+        document.getElementById('btnBuscarPrincipal').className = 'btn-buscar-principal';
+    }
+    
 }
 function validarCampoVacio() {
     inputBusqueda = document.getElementById('buscar').value;
@@ -98,12 +150,16 @@ function mostrarResultadosDivs() {
 //api
 
 btnBuscar.addEventListener('click', function () {
-    ocultarDivsTendencias();
-    ocultarDivsSugerencias();
-    mostrarResultadosDivs();
-    obtenerSugerencias();
-    inputBusqueda = document.getElementById('buscar').value;
-    getSearchResults(inputBusqueda);
+    if (inputBusqueda == '') {
+        alert('Ingrese una palabra')
+    } else {
+        ocultarDivsTendencias();
+        ocultarDivsSugerencias();
+        mostrarResultadosDivs();
+        obtenerSugerencias();
+        inputBusqueda = document.getElementById('buscar').value;
+        getSearchResults(inputBusqueda);
+    }
 })
 
 async function tendencias() {
@@ -139,7 +195,7 @@ function getSearchResults(palabraBuscada) {
             title.appendChild(tituloBusqueda);
             document.getElementById('div-resultados-busqueda').innerHTML = '';
             for (let index = 0; index < data.data.length; index++) {
-                const element = data.data[index].images.fixed_height.mp4;
+                const element = data.data[index].images.downsized.url;
                 const username = data.data[index].username;
                 console.log(element);
                 console.log(username);
@@ -152,7 +208,7 @@ function getSearchResults(palabraBuscada) {
                 titulo.className = 'titulo-sugerencias';
                 let textoTitulo = document.createTextNode('#' + palabraBuscada);
                 let contenedorGif = document.createElement('div');
-                contenedorGif.innerHTML = '<video src="' + element +'" class="gif" autoplay="true" loop="true">';
+                contenedorGif.innerHTML = '<img src="' + element +'" class="gif" autoplay="true" loop="true">';
                 titulo.appendChild(textoTitulo);
                 titular.appendChild(titulo);
                 contenedor.appendChild(titular);
@@ -197,7 +253,7 @@ function obtenerGifsugerencias () {
         })
         .then(data => {
             for (let index = 0; index < 4 ; index++) {
-                const element = data.data[index].images.fixed_height.mp4;
+                const element = data.data[index].images.downsized.url;
                 const name = data.data[index].username;
                 const divPrincipal = document.getElementById('div-resultados');
                 console.log(element);
@@ -212,7 +268,7 @@ function obtenerGifsugerencias () {
                 logo.src = '/src/img/button close.svg';
                 logo.className = 'logo-closed'
                 let contenedorGif = document.createElement('div');
-                contenedorGif.innerHTML = '<video src="' + element +'" class="gif" autoplay="true" loop="true">';
+                contenedorGif.innerHTML = '<img src="' + element +'" class="gif" autoplay="true" loop="true">';
                 titulo.appendChild(textoTitulo);
                 titular.appendChild(logo)
                 titular.insertBefore(titulo, logo)
@@ -235,7 +291,7 @@ function obtenerGifTendencias () {
         })
         .then(data => {
             for (let index = 0; index < 20 ; index++) {
-                const element = data.data[index].images.fixed_height.mp4;
+                const element = data.data[index].images.downsized.url;
                 const name = data.data[index].username;
                 const divPrincipal = document.getElementById('div-resultados-tendencias');
                 console.log(element);
@@ -247,7 +303,7 @@ function obtenerGifTendencias () {
                 titulo.className = 'titulo-sugerencias';
                 let textoTitulo = document.createTextNode('#' + name);
                 let contenedorGif = document.createElement('div');
-                contenedorGif.innerHTML = '<video src="' + element +'" class="gif" autoplay="true" loop="true">';
+                contenedorGif.innerHTML = '<img src="' + element +'" class="gif" autoplay="true" loop="true">';
                 titulo.appendChild(textoTitulo);
                 titular.appendChild(titulo);
                 contenedor.appendChild(titular);
